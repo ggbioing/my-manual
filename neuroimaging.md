@@ -1,5 +1,8 @@
 [adni](#adni) 
+
 [ants](#ants) 
+
+[dicombrowser](#dicombrowser) 
 
 ### ADNI
 adnimerge on R:
@@ -24,4 +27,12 @@ To run the scripts, you need to copy the `Scripts/*` to `antsbin/bin/`.
 Set the `ANTSPATH` to point to the `antsbin/bin/` directory. e.g. in your profile add:
 ```bash
 ANTSPATH=/home/myname/mycode/antsbin/bin/
+```
+
+### DicomBrowser
+```bash
+wget ftp://ftp.nrg.wustl.edu/pub/DicomBrowser/DicomBrowser-1.5.2.tgz
+wget https://bitbucket.org/nrg/dicombrowser/downloads/DicomBrowser-1.7.0b5-bin-with-dependencies.jar
+# https://wiki.xnat.org/xnat-tools/dicomedit/dicomedit-4-2-language-reference
+DicomRemap -d anon.das -o /path/to/dest/ source/
 ```
