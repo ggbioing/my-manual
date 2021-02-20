@@ -8,6 +8,8 @@
 
 [Explore DTI](#explore-dti)
 
+[FSL](#fsl)
+
 ### ADNI
 adnimerge on R:
 ```R
@@ -53,3 +55,18 @@ wget http://www.exploredti.com/ExploreDTI/Pcode/ExploreDTI_Pcode.zip
 export LD_LIBRARY_PATH="/home/luigi/matlab/Source/MD_cor_E/linux64:$LD_LIBRARY_PATH"
 sudo ln -s /home/luigi/matlab/ExploreDTI_v4.8.6/Source/MD_cor_E/linux64/libANNlib.so /usr/lib/libANNlib.so
 ```
+
+### FSL
+```bash
+FSLVERSION='fsl-5.0.10'
+wget -c http://fsl.fmrib.ox.ac.uk/fsldownloads/fslinstaller.py
+activate python2.x
+python fslinstaller.py
+wget -c http://fsl.fmrib.ox.ac.uk/fsldownloads/${FSLVERSION}-centos6_64.tar.gz
+wget -c http://fsl.fmrib.ox.ac.uk/fsldownloads/md5sums/${FSLVERSION}-centos6_64.tar.gz.md5
+./fslinstaller.py -f ${FSLVERSION}-centos6_64.tar.gz -C `cat ${FSLVERSION}-centos6_64.tar.gz.md5` -d /usr/local/
+sudo ./fslinstaller.py
+sudo python fslinstaller.py -f fsl-5.0.10-centos6_64.tar.gz -C 064abae9083e69fafd114dedd9add465 -T md5 -d /home/luigi/Software/fsl-5.0.10 # the directory must not exists
+```
+To use FSLView please install the PNG12 and MNG libraries with: `sudo yum install libpng12 libmng`.
+
