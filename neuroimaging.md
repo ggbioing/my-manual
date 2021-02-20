@@ -4,6 +4,8 @@
 
 [dicombrowser](#dicombrowser) 
 
+[dtiprep](#dti-prep)
+
 ### ADNI
 adnimerge on R:
 ```R
@@ -35,4 +37,9 @@ wget ftp://ftp.nrg.wustl.edu/pub/DicomBrowser/DicomBrowser-1.5.2.tgz
 wget https://bitbucket.org/nrg/dicombrowser/downloads/DicomBrowser-1.7.0b5-bin-with-dependencies.jar
 # https://wiki.xnat.org/xnat-tools/dicomedit/dicomedit-4-2-language-reference
 DicomRemap -d anon.das -o /path/to/dest/ source/
+```
+
+### DTI Prep
+```bash
+DWIConvert --inputVolume 01011-t1w.nrrd --conversionMode NrrdToFSL --outputVolume testout.nii --outputBVectors testout.bvecs --outputBValues testout.bvals
 ```
