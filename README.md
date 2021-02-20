@@ -1,5 +1,10 @@
 [conda](#conda)
+
 [cron](#cron)
+
+[curl](#curl)
+
+[date](#date)
 
 ### User Management
 
@@ -82,4 +87,23 @@ fi
 37 23 * * 0	rsync -av --delete /home/luigi/Dropbox /home/luigi/BACKUPS/Dropbox/weekly/
 1 22 1 * *	tar -c /home/luigi/Dropbox | /home/luigi/.linuxbrew/bin/pbzip2 -c > /home/luigi/BACKUPS/Dropbox/monthly_$(/bin/date +\%F).tar.bz2
 # http://www.cyberciti.biz/faq/linux-execute-cron-job-after-system-reboot/
+```
+
+### Curl
+```bash
+# check HTTP response code
+if [[ $(curl -s -o /dev/null -I -w "%{http_code}" http://biobank.ctsu.ox.ac.uk/crystal/index.cgi) == "3"?? ]] && echo "redirection"
+# use proxy
+curl --proxy http://192.168.100.62:8080 "http://surfer.nmr.mgh.harvard.edu/fswiki/MatlabRuntime?action=AttachFile&do=get&target=runtime2012bLinux.tar.gz" -o "runtime2012b.tar.gz"
+# sharepoint
+curl --ntlm -u DOMAIN/user https://sharepoint.domain.com/path/to/file
+```
+
+### Date
+```bash
+sudo dpkg-reconfigure tzdata
+# behind proxy
+sudo date -s "$(curl -sD - google.com | grep '^Date:' | cut -d' ' -f3-)"
+# epoch + nanoseconds
+date +%s%N
 ```
