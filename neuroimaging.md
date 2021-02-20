@@ -4,7 +4,9 @@
 
 [dicombrowser](#dicombrowser) 
 
-[dtiprep](#dti-prep)
+[DTI Prep](#dti-prep)
+
+[Explore DTI](#explore-dti)
 
 ### ADNI
 adnimerge on R:
@@ -42,4 +44,12 @@ DicomRemap -d anon.das -o /path/to/dest/ source/
 ### DTI Prep
 ```bash
 DWIConvert --inputVolume 01011-t1w.nrrd --conversionMode NrrdToFSL --outputVolume testout.nii --outputBVectors testout.bvecs --outputBValues testout.bvals
+```
+
+### EXPLORE-DTI
+```bash
+wget www.exploredti.com/ExploreDTI/Linux/64/ExploreDTI_v4.8.6.zip # standalone
+wget http://www.exploredti.com/ExploreDTI/Pcode/ExploreDTI_Pcode.zip
+export LD_LIBRARY_PATH="/home/luigi/matlab/Source/MD_cor_E/linux64:$LD_LIBRARY_PATH"
+sudo ln -s /home/luigi/matlab/ExploreDTI_v4.8.6/Source/MD_cor_E/linux64/libANNlib.so /usr/lib/libANNlib.so
 ```
