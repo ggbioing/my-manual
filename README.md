@@ -1,3 +1,6 @@
+[conda](#conda)
+[cron](#cron)
+
 ### User Management
 
 System user: no password login or home:
@@ -54,3 +57,29 @@ conda env remove --name myenv
 conda env export > environment.yml
 ```
 
+### Cron
+```bash
+# DAEMON SCRIPT
+#!/bin/bash
+while [ 1 -eq 1 ]; do
+# do some stuff
+sleep 5
+done
+# CRON SCRIPT
+#!/bin/bash
+OUTPUT=`ps -ef | grep ‘[b]ash_daemon\.sh’`
+if [ “$OUTPUT” ]
+then
+echo running
+else
+/home/jeff/bin/bash_daemon.sh
+fi
+# edit crontab
+* * * * * /home/jeff/bin/bash_cron.sh 	> /dev/null 2>&1
+
+# dropbox backup
+7 23 * * *	rsync -av --delete /home/luigi/Dropbox /home/luigi/BACKUPS/Dropbox/daily/
+37 23 * * 0	rsync -av --delete /home/luigi/Dropbox /home/luigi/BACKUPS/Dropbox/weekly/
+1 22 1 * *	tar -c /home/luigi/Dropbox | /home/luigi/.linuxbrew/bin/pbzip2 -c > /home/luigi/BACKUPS/Dropbox/monthly_$(/bin/date +\%F).tar.bz2
+# http://www.cyberciti.biz/faq/linux-execute-cron-job-after-system-reboot/
+```
