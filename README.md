@@ -43,3 +43,14 @@ vsftp "no delete" rigths:
 useradd -d /var/vsftp/ASL -s /usr/sbin/nologin -m brescia
 usermod -a -G asl brescia
 ```
+
+### Conda
+```bash
+conda update -n base conda
+conda info --envs
+conda env create -f environment.yml
+conda list
+conda env remove --name myenv
+conda env export > environment.yml
+```
+
