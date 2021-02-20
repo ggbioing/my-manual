@@ -1,5 +1,15 @@
-[adni](#adni)
-[ants](#ants)
+[adni](#adni) 
+[ants](#ants) 
+
+### ADNI
+adnimerge on R:
+```R
+install.packages("Hmisc")
+install.packages("/path/to/ADNIMERGE_0.0.1.tar.gz", repos = NULL, type = "source")
+library("ADNIMERGE")
+help(package = "ADNIMERGE")
+?adas
+```
 
 ### ANTs
 ```bash
@@ -14,14 +24,4 @@ To run the scripts, you need to copy the `Scripts/*` to `antsbin/bin/`.
 Set the `ANTSPATH` to point to the `antsbin/bin/` directory. e.g. in your profile add:
 ```bash
 ANTSPATH=/home/myname/mycode/antsbin/bin/
-```
-
-### ADNI
-adnimerge on R:
-```R
-install.packages("Hmisc")
-install.packages("/path/to/ADNIMERGE_0.0.1.tar.gz", repos = NULL, type = "source")
-library("ADNIMERGE")
-help(package = "ADNIMERGE")
-?adas
 ```
