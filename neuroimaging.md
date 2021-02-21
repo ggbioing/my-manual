@@ -89,6 +89,36 @@ To use FSLView please install the PNG12 and MNG libraries with: `sudo yum instal
 ### NeuGrid
 [website](https://neugrid4you.eu/)
 ```bash
+# Available N4U CE nodes:
+lcg-info --vo 'VOMS:/vo.neugrid.eu*' --list-ce --attrs OS,OSRelease,TotalCPUs,FreeCPUs,RunningJobs,FreeJobSlots,WaitingJobs
+# List the software packages available on the N4U grid:
+lcg-info --list-ce --attr Tag --vo 'VOMS:/vo.neugrid.eu*'
+# List the software packages available on a specific N4U node:
+lcg-info --vo 'VOMS:/vo.neugrid.eu*' --list-ce --query 'CE=*srv5.fatebenefratelli.it*' --attrs Tag | grep -E 'CE:|neugrid'
+# List the N4U nodes where a specific software package is available:
+lcg-info --vo 'VOMS:/vo.neugrid.eu*' --list-ce --query 'Tag=*VO-vo.neugrid.eu-freesurfer-5.1.0*'
+# To check the tags available on a CE:
+lcg-tags --ce ng-maat-server9.gnubila.fr --list 
+# EXPRESSLANE
+export EXPRESSLANE_DEBUG=1 # debug mode
+export EXPRESSLANE_VERBOSE=1 # verbose mode
+## software on seed resources:
+lcg-info --vo 'VO:vo.neugrid.eu' --list-ce --query 'Tag=*VO-vo.neugrid.eu-cmtk-20140723*' --attrs TotalCPUs,FreeCPUs,RunningJobs
+# Delete files in folder:
+for i in $(lfc-ls $PANDORA_GRID_HOME/adaboost/output); do echo $i; lcg-del -a lfn:$PANDORA_GRID_HOME/adaboost/output/$i & sleep 0.1; done
+# PERUSAL:
+# To enable the perusal mechanism two parameters need to be added to your .ext file:
+PerusalFileEnable=true
+PerusalTimeInterval=1000
+# Submit your job
+# Execute the following command to enable the functionality:
+glite-wms-job-perusal --set -f myOutputFile1 -f myOutputFile2 JOB_ID
+# Execute the following command to retrieve the output:
+glite-wms-job-perusal --get -f myOutputFile1 -f myOutputFile2 --dir MyOutputFolder JOB_ID
+# (If the folder does not exist it will be created automatically)
+```
+
+```bash
 lcg-info --vo 'VOMS:/vo.neugrid.eu*' --list-ce --attrs OS,OSRelease,TotalCPUs,FreeCPUs,RunningJobs,FreeJobSlots,WaitingJobs
 lcg-tags --ce ng-hug-server5.neuro.hcuge.ch --vo vo.neugrid.eu --list
 lcg-tags --ce ng-ki-server5.ki.se --vo vo.neugrid.eu --list
