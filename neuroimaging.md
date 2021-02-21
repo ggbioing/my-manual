@@ -8,7 +8,11 @@
 
 [Explore DTI](#explore-dti)
 
+[FreeSurfer](#freesurfer)
+
 [FSL](#fsl)
+
+[NeuGrid](#neugrid)
 
 ### ADNI
 adnimerge on R:
@@ -56,6 +60,18 @@ export LD_LIBRARY_PATH="/home/luigi/matlab/Source/MD_cor_E/linux64:$LD_LIBRARY_P
 sudo ln -s /home/luigi/matlab/ExploreDTI_v4.8.6/Source/MD_cor_E/linux64/libANNlib.so /usr/lib/libANNlib.so
 ```
 
+### FreeSurfer
+[website](https://surfer.nmr.mgh.harvard.edu/)
+```bash
+# CROSSECTIONAL
+recon-all -i file.nii.gz [-i file2.nii.gz] -s subjectname -all -hippo-subfields
+#TEMPLATE
+recon-all -base ${sub}_template -tp out_${sub}_T00_001 -tp out_${sub}_T06_001 -all
+#LONG
+recon-all -long out_11_002_VO_T02_MPRAGE_1 11_002_VO_MPRAGE_template -all -hippo-subfields
+```
+
+
 ### FSL
 ```bash
 FSLVERSION='fsl-5.0.10'
@@ -70,3 +86,11 @@ sudo python fslinstaller.py -f fsl-5.0.10-centos6_64.tar.gz -C 064abae9083e69faf
 ```
 To use FSLView please install the PNG12 and MNG libraries with: `sudo yum install libpng12 libmng`.
 
+### NeuGrid
+[website](https://neugrid4you.eu/)
+```bash
+lcg-info --vo 'VOMS:/vo.neugrid.eu*' --list-ce --attrs OS,OSRelease,TotalCPUs,FreeCPUs,RunningJobs,FreeJobSlots,WaitingJobs
+lcg-tags --ce ng-hug-server5.neuro.hcuge.ch --vo vo.neugrid.eu --list
+lcg-tags --ce ng-ki-server5.ki.se --vo vo.neugrid.eu --list
+lcg-info --vo VOMS:/vo.neugrid.eu\* --list-ce --query 'Tag=*VO-vo.neugrid.eu-freesurfer-5.1.0*'
+```
