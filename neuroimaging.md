@@ -8,11 +8,15 @@
 
 [Explore DTI](#explore-dti)
 
+[fmri-prep](#fmri-prep)
+
 [FreeSurfer](#freesurfer)
 
 [FSL](#fsl)
 
 [NeuGrid](#neugrid)
+
+[SPM](#spm)
 
 ### ADNI
 adnimerge on R:
@@ -60,6 +64,16 @@ export LD_LIBRARY_PATH="/home/luigi/matlab/Source/MD_cor_E/linux64:$LD_LIBRARY_P
 sudo ln -s /home/luigi/matlab/ExploreDTI_v4.8.6/Source/MD_cor_E/linux64/libANNlib.so /usr/lib/libANNlib.so
 ```
 
+### fmri-prep
+```bash
+# Install DOCKER
+# Follow Instruction on website
+# pip install future
+
+# No underscores in subj id
+fmriprep-docker --fs-license-file $FREESURFER_HOME/license.txt [--anat-only  --longitudinal --fs-no-reconall --participant_label PARTICIPANT_LABEL '0040043MACL'] --work-dir <full path to WD> <full path to BIDS> <full path to OUT dir>
+```
+
 ### FreeSurfer
 [website](https://surfer.nmr.mgh.harvard.edu/)
 ```bash
@@ -70,7 +84,6 @@ recon-all -base ${sub}_template -tp out_${sub}_T00_001 -tp out_${sub}_T06_001 -a
 #LONG
 recon-all -long out_11_002_VO_T02_MPRAGE_1 11_002_VO_MPRAGE_template -all -hippo-subfields
 ```
-
 
 ### FSL
 ```bash
@@ -123,4 +136,11 @@ lcg-info --vo 'VOMS:/vo.neugrid.eu*' --list-ce --attrs OS,OSRelease,TotalCPUs,Fr
 lcg-tags --ce ng-hug-server5.neuro.hcuge.ch --vo vo.neugrid.eu --list
 lcg-tags --ce ng-ki-server5.ki.se --vo vo.neugrid.eu --list
 lcg-info --vo VOMS:/vo.neugrid.eu\* --list-ce --query 'Tag=*VO-vo.neugrid.eu-freesurfer-5.1.0*'
+```
+
+### SPM
+```bash
+wget http://www.fil.ion.ucl.ac.uk/spm/download/restricted/eldorado/spm12.zip
+# Standalone
+wget http://www.fil.ion.ucl.ac.uk/spm/download/restricted/utopia
 ```
