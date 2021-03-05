@@ -35,6 +35,9 @@
 	[R](R.md#r)
 	[RStudio](R.md#rstudio)
 
+[Virtualization](virtualization.md):
+	[KVM-QEMU](virtualization.md#kvm-qemu):
+
 ### User Management
 
 System user: no password login or home:
