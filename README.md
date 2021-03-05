@@ -6,8 +6,8 @@
 
 [date](#date)
 
-[file compression](file_compression.md):
-	[7z](file_compression.md#7z)
+[file compression](file_compression.md){:target="_blank"}:
+	[7z](file_compression.md#7z){:target="_blank"}
 
 ### User Management
 
