@@ -15,6 +15,21 @@
 	[git](git.md#git),
 	[gitlab](git.md#gitlab).
 	
+[inria](inria.md):
+	[oar](inria.md#oar)
+
+[neuroimaging](neuroimaging.md):
+	[adni](neuroimaging.md#adni) 
+	[ants](neuroimaging.md#ants) 
+	[dicombrowser](neuroimaging.md#dicombrowser) 
+	[DTI Prep](neuroimaging.md#dti-prep)
+	[Explore DTI](neuroimaging.md#explore-dti)
+	[fmri-prep](neuroimaging.md#fmri-prep)
+	[FreeSurfer](neuroimaging.md#freesurfer)
+	[FSL](neuroimaging.md#fsl)
+	[NeuGrid](neuroimaging.md#neugrid)
+	[SPM](neuroimaging.md#spm)
+
 
 ### User Management
 
