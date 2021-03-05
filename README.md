@@ -27,6 +27,7 @@
 	[fmri-prep](neuroimaging.md#fmri-prep)
 	[FreeSurfer](neuroimaging.md#freesurfer)
 	[FSL](neuroimaging.md#fsl)
+	[MRICro](neuroimaging.md#mricro)
 	[NeuGrid](neuroimaging.md#neugrid)
 	[SPM](neuroimaging.md#spm)
 

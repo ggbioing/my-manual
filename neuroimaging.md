@@ -14,6 +14,8 @@
 
 [FSL](#fsl)
 
+[MRIcro](#mricro)
+
 [NeuGrid](#neugrid)
 
 [SPM](#spm)
@@ -98,6 +100,16 @@ sudo ./fslinstaller.py
 sudo python fslinstaller.py -f fsl-5.0.10-centos6_64.tar.gz -C 064abae9083e69fafd114dedd9add465 -T md5 -d /home/luigi/Software/fsl-5.0.10 # the directory must not exists
 ```
 To use FSLView please install the PNG12 and MNG libraries with: `sudo yum install libpng12 libmng`.
+
+### MRIcro
+```bash
+wget http://www.mccauslandcenter.sc.edu/mricro/mricro/mricrox.tar.gz
+sudo mkdir /usr/local/mricro
+sudo tar xzf mricrox.tar.gz -C /usr/local/mricro
+apt-get install ia32-libs
+cd /usr/local/mricro/mricro && ldd libborqt-6.9-qt2.3.so && install missing libraries
+sudo ln -s /usr/lib/i386-linux-gnu/libjpeg.so.8.0.2 /usr/lib/i386-linux-gnu/libjpeg.so.62
+```
 
 ### NeuGrid
 [website](https://neugrid4you.eu/)
