@@ -6,7 +6,7 @@
 
 [date](#date)
 
-[file compression](file_compression.md){:target="_blank"}:
+<a href="file_compression.md" target="_blank">file compression</a>:
 	[7z](file_compression.md#7z){:target="_blank"}
 
 ### User Management
