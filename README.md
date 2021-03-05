@@ -9,7 +9,11 @@
 [file compression](file_compression.md):
 	[7z](file_compression.md#7z),
 	[tar](file_compression.md#tar),
-	[zip](file_compression.md#zip),
+	[zip](file_compression.md#zip).
+
+[git](git.md):
+	[git](git.md#git),
+	[gitlab](git.md#gitlab).
 	
 
 ### User Management
