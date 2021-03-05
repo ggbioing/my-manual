@@ -6,8 +6,11 @@
 
 [date](#date)
 
-<a href="file_compression.md" target="_blank">file compression</a>:
-	[7z](file_compression.md#7z){:target="_blank"}
+[file compression](file_compression.md):
+	[7z](file_compression.md#7z),
+	[tar](file_compression.md#tar),
+	[zip](file_compression.md#zip),
+	
 
 ### User Management
 
