@@ -30,6 +30,9 @@
 	[NeuGrid](neuroimaging.md#neugrid)
 	[SPM](neuroimaging.md#spm)
 
+[R](R.md):
+	[R](R.md#r)
+	[RStudio](R.md#rstudio)
 
 ### User Management
 
