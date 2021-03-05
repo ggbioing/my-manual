@@ -6,6 +6,9 @@
 
 [date](#date)
 
+[file compression](file_compression.md):
+	[7z](file_compression.md#7z)
+
 ### User Management
 
 System user: no password login or home:
