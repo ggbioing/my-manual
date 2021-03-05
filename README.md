@@ -6,6 +6,9 @@
 
 [date](#date)
 
+[editing](editing.md):
+	[ffmpeg](editing.md#ffmpeg)
+
 [file compression](file_compression.md):
 	[7z](file_compression.md#7z),
 	[tar](file_compression.md#tar),
