@@ -7,7 +7,9 @@
 [date](#date)
 
 [editing](editing.md):
+	[briss](editing.md#briss)
 	[ffmpeg](editing.md#ffmpeg)
+	[ImageMagick](editing.md#imagemagick)
 
 [file compression](file_compression.md):
 	[7z](file_compression.md#7z),
