@@ -10,6 +10,7 @@
 	[briss](editing.md#briss)
 	[ffmpeg](editing.md#ffmpeg)
 	[ImageMagick](editing.md#imagemagick)
+	[QPDF](editing.md#qpdf)
 
 [file compression](file_compression.md):
 	[7z](file_compression.md#7z),

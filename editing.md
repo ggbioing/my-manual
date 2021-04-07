@@ -4,6 +4,8 @@
 
 [ImageMagick](#imagemagick)
 
+[QPDF](#qpdf)
+
 ### BRISS
 ```bash
 # tool to crop pdf
@@ -129,5 +131,13 @@ awk '{print $1}' histogram_image.txt | sed 's/://g' | gnuplot plot.gp
 convert pg_0010.png -fill white -fuzz 50% +opaque "#000000" result.png
 # ALL IN ONE
 convert -density 600 IN.pdf -fill white -fuzz 50% +opaque "#000000"  -alpha off -monochrome -compress Group4 -quality 100 -units PixelsPerInch OUT.pdf
+```
+
+### QPDF
+```bash
+# merge pages
+qpdf --empty --pages cerfa0.pdf 1 cerfa1.pdf 1 cerfa2.pdf 1 -- out.pdf
+qpdf --empty --pages /home/lantelmi/Documents/blank.pdf 1 fantasie.pdf 1-10 -- out.pdf
+qpdf --empty --pages *.pdf -- out.pdf
 ```
 
