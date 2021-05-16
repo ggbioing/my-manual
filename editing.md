@@ -35,8 +35,8 @@ ffmpeg -i videoIn.mp4 -ss 1:00 -to 2:00 -vn -acodec 'copy' audioOut.aac
 ffmpeg -i file.aac -af "volumedetect" -f null /dev/null
 ffmpeg -i video.avi -af "volumedetect" -vn -sn -dn -f null /dev/null
 
-
-ffmpeg -i 01-A_Teardrop_To_The_Sea.flac -acodec aac -strict -2 01-A_Teardrop_To_The_Sea.aac
+# AAC audio encoding
+ffmpeg -i infile.flac -c:a aac -strict 2 -ab 192k outfile.aac
 # dmn : in windows use "Screen Recorder" to capture the screen
 ffmpeg -i dmn_pt13_.avi -qscale 0 -ss 0:12 -to 0:40 -filter:v "crop=633:846:1269:182,setpts=0.5*PTS" dmn_pt13.avi
 ffmpeg -i dmn_pt13_.avi -qscale 0 -filter:v "setpts=0.5*PTS" dmn_pt13s.avi
