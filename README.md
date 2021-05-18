@@ -12,6 +12,9 @@
 	[ImageMagick](editing.md#imagemagick)
 	[QPDF](editing.md#qpdf)
 
+[file browsing](file_browsing.md):
+	[Ranger](file_browsing.md#ranger-vim-key-binding-terminal-file-browser)
+
 [file compression](file_compression.md):
 	[7z](file_compression.md#7z),
 	[tar](file_compression.md#tar),
