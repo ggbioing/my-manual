@@ -4,11 +4,13 @@
 ### WSL
 Windows Subsystem for Linux
 
+Symlink in WIN10
 
-Frequently Used Commands
-```bash
-git add <newfile>
-git commit -m <message>
-git push
+```prompt
+:: Run as Administrator
+fsutil behavior query SymlinkEvaluation  :: check that remote to local is enabled, otherwise enable it
+fsutil behavior set SymlinkEvaluation R2L:1
+mklink [src] [dest] :: create symlink
+mklink /d my_folder \\192.168.1.13\my_folder_on_network
 ```
 
