@@ -47,6 +47,8 @@
 [Virtualization](virtualization.md):
 	[KVM-QEMU](virtualization.md#kvm-qemu):
 
+[WSL](wsl.md)
+
 ### User Management
 
 System user: no password login or home:
