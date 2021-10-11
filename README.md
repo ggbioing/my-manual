@@ -27,6 +27,9 @@
 [inria](inria.md):
 	[oar](inria.md#oar)
 
+[mount](mount.md):
+	[fstab](mount.md#fstab)
+
 [neuroimaging](neuroimaging.md):
 	[adni](neuroimaging.md#adni) 
 	[ants](neuroimaging.md#ants) 
