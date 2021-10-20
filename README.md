@@ -50,6 +50,9 @@
 [Virtualization](virtualization.md):
 	[KVM-QEMU](virtualization.md#kvm-qemu):
 
+[Windows](windows.md):
+	[Remote Desktop](windows.md#remotedesktop)
+
 [WSL](wsl.md)
 
 ### User Management
