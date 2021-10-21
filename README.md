@@ -52,8 +52,7 @@
 
 [Windows](windows.md):
 	[Remote Desktop](windows.md#remotedesktop)
-
-[WSL](wsl.md)
+	[WSL](windows.md#wsl)
 
 ### User Management
 
