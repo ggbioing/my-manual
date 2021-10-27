@@ -18,7 +18,7 @@ Edit the register:
 ### WSL
 Windows Subsystem for Linux
 
-Symlink in WIN10
+Symlink working both on WIN10 and WSL must be created in cmd.exe as follows:
 ```prompt
 :: Run as Administrator
 fsutil behavior query SymlinkEvaluation  :: check that remote to local is enabled, otherwise enable it
@@ -27,13 +27,13 @@ mklink [src] [dest] :: create symlink
 mklink /d my_folder \\192.168.1.13\my_folder_on_network
 ```
 
-On WSL mount it directly:
+mounting a network shared folder:
 ```bash
 sudo mount -t drvfs '\\192.168.1.13\my_network_folder' $HOME/my_local_folder
 ```
 
 GUI on WSL:
-start an Xserver on Windows (e.g. [VcXsrv](https://sourceforge.net/projects/vcxsrv/) then run on wsl:
+start an Xserver on Windows (e.g. [VcXsrv](https://sourceforge.net/projects/vcxsrv/)) then run on wsl:
 ```bash
 export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):0.0
 export LIBGL_ALWAYS_INDIRECT=1
