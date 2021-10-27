@@ -47,6 +47,8 @@
 	[R](R.md#r)
 	[RStudio](R.md#rstudio)
 
+[ssh](ssh.md)
+
 [Virtualization](virtualization.md):
 	[KVM-QEMU](virtualization.md#kvm-qemu):
 
