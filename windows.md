@@ -31,3 +31,12 @@ On WSL mount it directly:
 ```bash
 sudo mount -t drvfs '\\192.168.1.13\my_network_folder' $HOME/my_local_folder
 ```
+
+GUI on WSL:
+start an Xserver on Windows (e.g. [VcXsrv](https://sourceforge.net/projects/vcxsrv/) then run on wsl:
+```bash
+export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):0.0
+export LIBGL_ALWAYS_INDIRECT=1
+sudo /etc/init.d/dbus start &> /dev/null
+```
+
