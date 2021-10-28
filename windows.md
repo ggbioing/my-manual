@@ -21,7 +21,8 @@ then go to "Computer Configuration > Administrative Templates > System > Credent
 and disable "Restrict delegation of credentials to the remote servers".
 
 Edit the register:
-```console
+```regedit
+Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa]
 "limitblankpassworduse"=dword:00000000
 ```
