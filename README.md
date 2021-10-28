@@ -1,3 +1,5 @@
+# Index
+
 [conda](#conda)
 
 [cron](#cron)
@@ -53,6 +55,7 @@
 	[KVM-QEMU](virtualization.md#kvm-qemu):
 
 [Windows](windows.md):
+	[Regedit](windows.md#regedit)
 	[Remote Desktop](windows.md#remotedesktop)
 	[WSL](windows.md#wsl)
 

@@ -1,6 +1,17 @@
+[Regedit](#regedit)
+
 [RemoteDesktop](#remotedesktop)
 
 [WSL](#wsl)
+
+### Regedit
+
+Disable Edge at startup
+```regedit
+Windows Registry Editor Version 5.00
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\NlaSvc\Parameters\Internet]
+"EnableActiveProbing"=dword:00000000
+```
 
 ### RemoteDesktop
 Allow remote login without password:
