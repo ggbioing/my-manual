@@ -114,6 +114,22 @@ conda list
 conda env remove --name myenv
 conda env export > environment.yml
 ```
+Example of 'yml' file:
+```yml
+name: py38
+channels:
+- defaults
+dependencies:
+- python=3.8
+- numpy
+- matplotlib
+- scipy
+- pandas
+- ipython
+- jupyter
+- scikit-learn
+- scikit-image
+```
 
 ### Cron
 ```bash
