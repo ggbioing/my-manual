@@ -1,6 +1,6 @@
 # Index
 
-[audio video](#audio_video.md)
+[audio-video](#audio_video.md):
 	[mplayer](audio_video.md#mplayer)
 
 [conda](#conda)
@@ -51,6 +51,9 @@
 [R](R.md):
 	[R](R.md#r)
 	[RStudio](R.md#rstudio)
+
+[scientific-computing](#scientific_computing.md):
+	[matlab](scientific_computing.md#matlab)
 
 [ssh](ssh.md)
 
