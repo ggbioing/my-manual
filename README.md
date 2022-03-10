@@ -48,12 +48,11 @@
 	[NeuGrid](neuroimaging.md#neugrid)
 	[SPM](neuroimaging.md#spm)
 
-[R](R.md):
+Scientific Computing:
+- [MATLAB](matlab.md)
+- [R](R.md):
 	[R](R.md#r)
 	[RStudio](R.md#rstudio)
-
-[scientific-computing](#scientific_computing.md):
-	[matlab](scientific_computing.md#matlab)
 
 [ssh](ssh.md)
 
