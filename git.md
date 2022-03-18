@@ -56,13 +56,13 @@ git push origin --delete remoteBranchName
 Submodules
 - Add a submodule to your primary repository:
 ```bash
-git submodule add [-b <branch>] <secondary-repository.git>
+git submodule add [-b <branch-of-secondary-repo>] <secondary-repo.git>
 ```
 - To clone the primary repository with all the submodules:
 ```bash
 git clone --recursive https://github.com/chaconinc/MainProject
-```
 
+```
 Push to 2 remotes [[source]](https://gist.github.com/rvl/c3f156e117e22a25f242)
 ```bash
 # Assume an "origin" remote already exists (it's the one you cloned from)
