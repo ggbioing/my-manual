@@ -54,13 +54,13 @@ git push origin --delete remoteBranchName
 ```
 
 Submodules
+- Add a submodule to your primary repository:
 ```bash
-git submodule add https://github.com/chaconinc/DbConnector
-git commit -am 'added DbConnector module'
-# To clone the main project with the submodule
+git submodule add [-b <branch>] <secondary-repository.git>
+```
+- To clone the primary repository with all the submodules:
+```bash
 git clone --recursive https://github.com/chaconinc/MainProject
-# To update the submodule
-git fetch && git merge  # in the submodule directory
 ```
 
 Push to 2 remotes [[source]](https://gist.github.com/rvl/c3f156e117e22a25f242)
@@ -77,6 +77,17 @@ git remote show origin
 # to undo: remove origin push to new remote + remove remote
 git remote set-url --delete origin git@github.com:ggbioing/our-secret-stash.git
 git remote remove ggbioing
+```
+
+Tagging
+```bash
+git tag <tag_name> <commit_sha>
+# With message
+git tag -a <tag_name> <commit_sha> -m "message"
+# Push 
+git push --tags
+# Check tags
+# git tag -n
 ```
 
 Miscellanea
