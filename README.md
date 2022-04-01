@@ -136,6 +136,12 @@ dependencies:
 - scikit-image
 ```
 
+Create a *.bat file for use in windows:
+```cmd
+cd C:\Users\Luigi.Antelmi\Git\ggbioing
+%windir%\System32\cmd.exe "/K" C:\Users\Luigi.Antelmi\miniconda3\Scripts\activate.bat C:\Users\Luigi.Antelmi\miniconda3\envs\py38
+```
+
 ### Cron
 ```bash
 # DAEMON SCRIPT
