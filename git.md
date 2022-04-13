@@ -59,7 +59,7 @@ Read carefully: https://git-scm.com/book/en/v2/Git-Tools-Submodules
 
 - Add a submodule to your primary repository:
 ```bash
-git submodule add [-b <branch-of-secondary-repo>] <secondary-repo.git> [<local-path>]
+git submodule add [-b <branch-of-secondary-repo>] <[absolute|relative]-path-to-secondary-repo.git> [<local-path>]
 ```
 - To clone the primary repository with all the submodules:
 ```bash
