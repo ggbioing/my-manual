@@ -86,7 +86,8 @@ sudo usermod -s /bin/bash myuser
 ```
 Heres the command I almost always use:
 ```bash
-NEWUSER='username'  && sudo useradd -d /home/$NEWUSER -s /bin/bash -m $NEWUSER
+NEWUSER='username'
+sudo useradd -d /home/$NEWUSER -s /bin/bash -m $NEWUSER [--uid 1500] [--comment "User Full Name"] [--expiredate YYYY-MM-DD]
 ```
 
 ### Group Management
