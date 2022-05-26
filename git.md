@@ -28,6 +28,45 @@ git config --global credential.helper 'cache --timeout=3600'
 git config --global http.postBuffer 524288000 # for big files
 ```
 
+Config file `.gitconfig` on a Windows Based Machine:
+```
+[filter "lfs"]
+        clean = git-lfs clean -- %f
+        smudge = git-lfs smudge -- %f
+        process = git-lfs filter-process
+        required = true
+[user]
+        name = Name Surname
+        email = Name.Surname@gmail.com
+[init]
+        defaultBranch = main
+[push]
+        default = simple
+[color]
+        ui = auto
+[core]
+        editor = vim
+        whitespace = blank-at-eol, blank-at-eof, space-before-tab
+[credential]
+        helper = cache --timeout=3600
+[http]
+        postBuffer = 524288000
+[diff]
+        tool = p4merge
+[difftool "p4merge"]
+        path = "C:\\Program Files\\Perforce\\p4merge.exe"
+[merge]
+        tool = p4merge
+[mergetool "p4merge"]
+        path = "C:\\Program Files\\Perforce\\p4merge.exe"
+[alias]
+        dc = diff --check
+        history = log --graph --full-history --pretty=format:'%C(red)%h%Creset -%C(bold yellow)%d%C(bold cyan) %s %Creset %C(bold green)(%cr)%Creset - %C(white) %cn %Creset' --abbrev-commit --date=relative
+        historyheads = log --graph --all --decorate --simplify-by-decoration
+        ha = history --all
+        hh = historyheads
+```
+
 Create a branch
 ```bash
 # Before creating a new branch, pull the changes from upstream. Your master needs to be up to date.
