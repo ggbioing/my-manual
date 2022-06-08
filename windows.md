@@ -1,8 +1,18 @@
+[Miscellanea](#miscellanea)
+
 [Regedit](#regedit)
 
 [RemoteDesktop](#remotedesktop)
 
 [WSL](#wsl)
+
+### Miscellanea
+
+- **LINQPad**: per query su DB relazionali compatti (e.g. Microsoft Compact Edition)
+- **StarUML**: per la realizzazione di grafici UML (progettazione Software, DB, ...)
+- **WinDirStat**: visualizzazione grafica dell'utilizzo del filesystem
+- **BalenaEtcher**: per la creazione di pendrive con boot
+
 
 ### Regedit
 
