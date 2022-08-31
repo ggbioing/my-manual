@@ -2,7 +2,8 @@
 
 [gitlab](#gitlab)
 
-### GIT
+# GIT
+
 [beginning](http://www.linux.com/learn/tutorials/796387-beginning-git-and-github-for-linux-users/)
 
 Frequently Used Commands
@@ -11,6 +12,9 @@ git add <newfile>
 git commit -m <message>
 git push
 ```
+
+
+## Configuration
 
 Global setup
 ```bash
@@ -68,7 +72,7 @@ Config file `.gitconfig` on a Windows Based Machine:
 ```
 
 
-**Branching**
+## Branching
 
 Create a branch
 ```bash
@@ -95,21 +99,27 @@ git branch -d localBranchName
 git push origin --delete remoteBranchName
 ```
 
-**Submodules**
+
+## Submodules
 
 Read carefully:
 - https://git-scm.com/book/en/v2/Git-Tools-Submodules
 - https://medium.com/@porteneuve/mastering-git-submodules-34c65e940407 (https://archive.ph/IrtMt)
 
 Add a submodule to your primary repository:
+
 ```bash
 git submodule add [-b <branch-of-secondary-repo>] <[absolute|relative]-path-to-secondary-repo.git> [<local-path>]
 ```
-- To clone the primary repository with all the submodules:
+
+To clone the primary repository with all the submodules:
 ```bash
 git clone --recursive https://github.com/chaconinc/MainProject
-
 ```
+
+
+## Pushing
+
 Push to 2 remotes [[source]](https://gist.github.com/rvl/c3f156e117e22a25f242)
 ```bash
 # Assume an "origin" remote already exists (it's the one you cloned from)
@@ -127,7 +137,7 @@ git remote remove ggbioing
 ```
 
 
-**Tagging**
+## Tagging
 
 ```bash
 git tag <tag_name> <commit_sha>
@@ -140,7 +150,7 @@ git push --tags
 ```
 
 
-**Miscellanea**
+## Miscellanea
 
 ```bash
 unset SSH_ASKPASS # add to .bashrc
@@ -166,32 +176,6 @@ git push -u origin master
 git remote set-url origin git@gitlab.inria.fr:epione_ML/mcvae.git
 ```
 
-### GitLab
-```bash
-# Command line instructions
-# Git global setup
-git config user.name "ANTELMI Luigi"
-git config user.email "luigi.antelmi@inria.fr"
+# GitLab
 
-# Create a new repository
-git clone https://lantelmi@gitlab.inria.fr/asclepios_ML/tutorials.git
-cd tutorials
-touch README.md
-git add README.md
-git commit -m "add README"
-git push -u origin master
-
-# Existing folder
-cd existing_folder
-git init
-git remote add origin https://lantelmi@gitlab.inria.fr/asclepios_ML/tutorials.git
-git add .
-git commit
-git push -u origin master
-
-# Existing Git repository
-cd existing_repo
-git remote add origin https://lantelmi@gitlab.inria.fr/asclepios_ML/tutorials.git
-git push -u origin --all
-git push -u origin --tags
-```
+to be filled
