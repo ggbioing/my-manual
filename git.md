@@ -67,6 +67,9 @@ Config file `.gitconfig` on a Windows Based Machine:
         hh = historyheads
 ```
 
+
+**Branching**
+
 Create a branch
 ```bash
 # Before creating a new branch, pull the changes from upstream. Your master needs to be up to date.
@@ -92,11 +95,13 @@ git branch -d localBranchName
 git push origin --delete remoteBranchName
 ```
 
-Submodules
+**Submodules**
 
-Read carefully: https://git-scm.com/book/en/v2/Git-Tools-Submodules
+Read carefully:
+- https://git-scm.com/book/en/v2/Git-Tools-Submodules
+- https://medium.com/@porteneuve/mastering-git-submodules-34c65e940407 (https://archive.ph/IrtMt)
 
-- Add a submodule to your primary repository:
+Add a submodule to your primary repository:
 ```bash
 git submodule add [-b <branch-of-secondary-repo>] <[absolute|relative]-path-to-secondary-repo.git> [<local-path>]
 ```
@@ -121,7 +126,9 @@ git remote set-url --delete origin git@github.com:ggbioing/our-secret-stash.git
 git remote remove ggbioing
 ```
 
-Tagging
+
+**Tagging**
+
 ```bash
 git tag <tag_name> <commit_sha>
 # With message
@@ -132,7 +139,9 @@ git push --tags
 # git tag -n
 ```
 
-Miscellanea
+
+**Miscellanea**
+
 ```bash
 unset SSH_ASKPASS # add to .bashrc
 
