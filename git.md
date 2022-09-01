@@ -69,6 +69,8 @@ Config file `.gitconfig` on a Windows Based Machine:
         historyheads = log --graph --all --decorate --simplify-by-decoration
         ha = history --all
         hh = historyheads
+[status]
+        submoduleSummary = true
 ```
 
 
