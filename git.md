@@ -108,16 +108,44 @@ Read carefully:
 - https://git-scm.com/book/en/v2/Git-Tools-Submodules
 - https://medium.com/@porteneuve/mastering-git-submodules-34c65e940407 (https://archive.ph/IrtMt)
 
-Add a submodule to your primary repository:
-
+Add configuration option for a verbose git output when dealing with submodules
 ```bash
-git submodule add [-b <branch-of-secondary-repo>] <[absolute|relative]-path-to-secondary-repo.git> [<local-path>]
+git config --global status.submoduleSummary true
+```
+
+Add a submodule to your primary repository:
+```bash
+git submodule add [-b <branch-of-secondary-repo>] <remote-[absolute|relative]-path-to-secondary-repo.git> [<local-path>]
 ```
 
 To clone the primary repository with all the submodules:
 ```bash
-git clone --recursive https://github.com/chaconinc/MainProject
+git clone --recursive <remote-repo-with-submodules.git>
 ```
+
+**Going to a specific point in time**
+```bash
+# In the super-repository run:
+git checkout <commit|tag>
+git submodule update
+```
+
+**Pull latest changes in sub-modules**
+
+If the submodules are in *detached* state,
+checkout the sub-modules branches you want to update (example with `Stable` and `main` branches):
+```bash
+# In the super-repository run:
+git submodule foreach 'git checkout Stable || git checkout main || :'
+```
+
+Update the sub-modules
+```bash
+# In the super-repository run:
+git submodule foreach 'git pull'
+```
+
+Run `git status` in the super-repo to check if it is aligned with the sub-modules.
 
 
 ## Pushing
@@ -145,10 +173,10 @@ git remote remove ggbioing
 git tag <tag_name> <commit_sha>
 # With message
 git tag -a <tag_name> <commit_sha> -m "message"
-# Push 
+# Push to origin
 git push --tags
 # Check tags
-# git tag -n
+git tag -n
 ```
 
 
