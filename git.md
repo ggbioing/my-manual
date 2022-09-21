@@ -40,23 +40,38 @@ Config file `.gitconfig` on a Windows Based Machine:
         process = git-lfs filter-process
         required = true
 [user]
-        name = Name Surname
-        email = Name.Surname@gmail.com
+        name = Luigi Antelmi
+        email = luigi.antelmi@gmail.com
 [init]
         defaultBranch = main
 [push]
         default = simple
-[color]
-        ui = auto
 [core]
         editor = vim
         whitespace = blank-at-eol, blank-at-eof, space-before-tab
+        autocrlf = true
+        attributesfile = C:/Users/Luigi.Antelmi/.gitattributes
 [credential]
         helper = cache --timeout=3600
 [http]
         postBuffer = 524288000
+[gui]
+        fontui = -family Tahoma -size 8 -weight normal -slant roman -underline 0 -overstrike 0
+        fontdiff = -family Consolas -size 8 -weight normal -slant roman -underline 0 -overstrike 0
+[color]
+        ui = auto
+        branch = auto
+        diff = auto
+        status = auto
 [diff]
         tool = p4merge
+[diff "pandoc"]
+        textconv = pandoc --wrap=preserve --to=markdown
+[diff "strings"]
+        textconv = strings -a
+        prompt = false
+[diff "exif"]
+        textconv = exiftool
 [difftool "p4merge"]
         path = "C:\\Program Files\\Perforce\\p4merge.exe"
 [merge]
@@ -69,8 +84,18 @@ Config file `.gitconfig` on a Windows Based Machine:
         historyheads = log --graph --all --decorate --simplify-by-decoration
         ha = history --all
         hh = historyheads
+        wdiff = diff --word-diff=color --unified=1
 [status]
         submoduleSummary = true
+```
+
+Atribute file `.gitattributes`:
+```
+*.png diff=exif
+*.jpg diff=exif
+*.jpeg diff=exif
+*.doc diff=pandoc
+*.docx diff=pandoc
 ```
 
 
