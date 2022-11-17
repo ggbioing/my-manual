@@ -202,6 +202,10 @@ git tag -a <tag_name> <commit_sha> -m "message"
 git push --tags
 # Check tags
 git tag -n
+# remove local tag
+git tag -d <tag_name>
+# remove remote tag
+git push --delete origin <tag-name>
 ```
 
 
