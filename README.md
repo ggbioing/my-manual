@@ -3,6 +3,8 @@
 [audio-video](#audio_video.md):
 	[mplayer](audio_video.md#mplayer)
 
+[Bash](bash.md)
+
 [conda](#conda)
 
 [cron](#cron)
