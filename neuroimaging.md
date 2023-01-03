@@ -59,8 +59,54 @@ storescp +xa 5678
 ```
 
 **Worklist**
+[usage example here](https://groups.google.com/g/comp.protocols.dicom/c/oc5XglBUWG0)
 
-Info from:
+    Hi,
+    
+    supposing that you have installed dcmtk352 and are able to run the new
+    worklist SCP implementation "wlmscpfs" (which replaces the former "wlistctn"
+    application (which may be used analogously in case you have an earlier
+    version of dcmtk)) as well as the "findscu" application, do the following:
+    
+    1. use dump2dcm to convert all "*.dump" files in dcmtk/dcmwlm/wlistdb/OFFIS
+    to "*.wl" files (DICOM format). Note that these files have to have the
+    extension "*.wl", otherwise wlmscpfs will not find these files. These files
+    represent your worklist database.
+    2. use dump2dcm to convert all "*.dump" files in dcmtk/dcmwlm/wlistqry to
+    "*.dcm" files (DICOM format). These files represent possible queries that
+    can be used to query the worklist database.
+    3. in one shell go "wlmscpfs -v -dfp dcmtk/dcmwlm/wlistdb 1234" (start the
+    worklist management SCP)
+    4. in another shell go "findscu -v --call OFFIS localhost 1234
+    dcmtk/dcmwlm/wlistqry/wlistqry0.dcm" (send a certain query to the WLM SCP)
+    
+    Step 3 will start the worklist management SCP which will listen on port 1234
+    for incoming C-FIND RQ messages. The "-dfp dcmtk/dcmwlm/wlistdb" option
+    specifies that the worklist database can be found in folder
+    "dcmtk/dcmwlm/wlistdb". Note that the worklist database can be organized in
+    different storage areas. Subfolder "OFFIS" below "dcmtk/dcmwlm/wlistdb" is
+    one (the only one in this case) storage area. In an incoming C-FIND RQ, an
+    SCU has to tell wlmscpfs which storage area shall be queried; this is done
+    by sending a certain "called AE title" to wlmscpfs.
+    
+    Step 4 will send the query in file "dcmtk/dcmwlm/wlistqry/wlistqry0.dcm"
+    using a C-FIND-RQ message to the wlmscpfs application (which is running on
+    "localhost" and listening on port "1234"). Option "--call OFFIS" specifies
+    that the called AE title is "OFFIS" which in turn tells the wlmscpfs
+    application to query the storage area "OFFIS" in its worklist database.
+    
+    The two programs should then dump information that shows their internal
+    processings (C-FIND RQ - C-FIND RSP). You can also use a different query
+    file in folder "dcmtk/dcmwlm/wlistqry/" for querying the worklist database.
+    
+    In case you have more questions, dont hesitate to ask.
+    
+    
+    Regards,
+    Thomas Wilkens
+    OFFIS
+
+More info from:
 [dcmwlm/data/wlistdb](https://github.com/InsightSoftwareConsortium/DCMTK/tree/master/dcmwlm/data/wlistdb)
 
 DCMWLM - EXAMPLE MODALITY WORKLIST DATABASE
