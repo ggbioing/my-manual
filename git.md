@@ -140,7 +140,7 @@ git config --global status.submoduleSummary true
 
 Add a submodule to your primary repository:
 ```bash
-git submodule add [-b <branch-of-secondary-repo>] <remote-[absolute|relative]-path-to-secondary-repo.git> [<local-path>]
+git submodule add [--name name_in_gitmodules_file] [-b <branch-of-secondary-repo>] <remote-[absolute|relative]-path-to-secondary-repo.git> [<local-path>]
 ```
 
 To clone the primary repository with all the submodules:

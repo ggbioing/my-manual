@@ -49,6 +49,11 @@ mklink [src] [dest] :: create symlink
 mklink /d my_folder \\192.168.1.13\my_folder_on_network
 ```
 
+Symlink with PowerShell
+```prompt
+New-Item -ItemType SymbolicLink -Path "Link" -Target "Target"
+```
+
 mounting a network shared folder:
 ```bash
 sudo mount -t drvfs '\\192.168.1.13\my_network_folder' $HOME/my_local_folder
