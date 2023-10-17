@@ -209,6 +209,54 @@ git push --delete origin <tag-name>
 ```
 
 
+## LFS: Handling Large Files
+[
+[source](https://www.git-tower.com/learn/git/ebook/en/command-line/advanced-topics/git-lfs),
+[permalink](http://web.archive.org/web/20231017084743/https://www.git-tower.com/learn/git/ebook/en/command-line/advanced-topics/git-lfs)
+]
+
+### Hints
+**When to Track**
+
+You can accuse Git of many things - but definitely not of forgetfulness:
+things that you've committed to the repository are there to stay.
+It's very hard to get things out of a project's commit history (and that's a good thing).
+
+In the end, this means one thing:
+**make sure to set your LFS tracking patterns as early as possible - ideally right after initializing a new repository**.
+To change a file that was committed the usual way into an LFS-managed object, you would have to manipulate and rewrite your project's history.
+And you certainly want to avoid this.
+
+**Cloning a Git LFS Repository**
+
+To clone an existing LFS repository from a remote server, you can simply use the standard "git clone" command that you already know.
+After downloading the repository, Git will check out the default branch and then hand over to LFS:
+if there are any LFS-managed files in the current revision, they'll be automatically downloaded for you.
+
+That's all well and good - but if you want to speed up the cloning process, you can also use the "git lfs clone" command instead.
+The main difference is that, after the initial checkout was performed, the requested LFS items are downloaded in parallel (instead of one after the other).
+This could be a nice time saver for repositories with lots of LFS-tracked files.
+
+### Useful commands
+Run the "install" command once to complete the initialization:
+
+```bash
+git lfs install
+```
+
+Tracking steps
+```bash
+git lfs track "*.png"  # Don't forget the quotes around the file pattern
+git add .gitattributes  # It should contain: *.png filter=lfs diff=lfs merge=lfs -text
+git add *.png
+git commit -m "Add *.png file"
+```
+
+Which files are we tracking?
+```bash
+git lfs ls-files
+```
+
 ## Miscellanea
 
 ```bash
