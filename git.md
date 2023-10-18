@@ -242,6 +242,7 @@ Run the "install" command once to complete the initialization:
 
 ```bash
 git lfs install
+git config --add lfs.url "file:////NAS/path_to.git"
 ```
 
 Tracking steps
