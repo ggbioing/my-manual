@@ -4,7 +4,6 @@
 
 # GIT
 
-[beginning](http://www.linux.com/learn/tutorials/796387-beginning-git-and-github-for-linux-users/)
 
 Frequently Used Commands
 ```bash

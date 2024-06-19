@@ -20,7 +20,7 @@ and is definitely a better alternative than spamming `ls` every 3 seconds.
 user@server:~$ pip install ranger-fm
 user@server:~$ ranger
 ```
-![ranger](./img/ranger.png)
+![ranger](ranger.png)
 
 
 If you're not familiar with vim key binding, 

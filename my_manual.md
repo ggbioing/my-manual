@@ -1,72 +1,58 @@
-# Index
+# Indexed
 
-[audio-video](#audio_video.md):
-	[mplayer](audio_video.md#mplayer)
+- [[audio_video]]:
+	- [mplayer](audio_video.md#mplayer)
+- [[bash]]
+- [[#Conda]]
+- [[#Cron]]
+- [[#Curl]]
+- [date](#date)
+- [editing](editing.md):
+	- [briss](editing.md#briss)
+	- [ffmpeg](editing.md#ffmpeg)
+	- [ImageMagick](editing.md#imagemagick)
+	- [QPDF](editing.md#qpdf)
+- [file browsing](file_browsing.md):
+	- [Ranger](file_browsing.md#ranger-vim-key-binding-terminal-file-browser)
+- [file compression](file_compression.md):
+	- [7z](file_compression.md#7z)
+	- [tar](file_compression.md#tar)
+	- [zip](file_compression.md#zip)
+- [git](git.md):
+	- [git](git.md#git)
+	- [gitlab](git.md#gitlab)
+- [inria](inria.md):
+	- [oar](inria.md#oar)
+- [mount](mount.md):
+	- [fstab](mount.md#fstab)
+- [neuroimaging](neuroimaging.md):
+	- [adni](neuroimaging.md#adni) 
+	- [ants](neuroimaging.md#ants) 
+	- [dicombrowser](neuroimaging.md#dicombrowser) 
+	- [DTI Prep](neuroimaging.md#dti-prep)
+	- [Explore DTI](neuroimaging.md#explore-dti)
+	- [fmri-prep](neuroimaging.md#fmri-prep)
+	- [FreeSurfer](neuroimaging.md#freesurfer)
+	- [FSL](neuroimaging.md#fsl)
+	- [MRICro](neuroimaging.md#mricro)
+	- [NeuGrid](neuroimaging.md#neugrid)
+	- [SPM](neuroimaging.md#spm)
+- Scientific Computing:
+	- [MATLAB](matlab.md)
+	- [R](R.md):
+		- [R](R.md#r)
+		- [RStudio](R.md#rstudio)
+- [ssh](ssh.md)
+- [Virtualization](virtualization.md):
+	- [KVM-QEMU](virtualization.md#kvm-qemu):
+- [Windows](windows.md):
+	- [Regedit](windows.md#regedit)
+	- [Remote Desktop](windows.md#remotedesktop)
+	- [WSL](windows.md#wsl)
 
-[Bash](bash.md)
+# Miscellanea
 
-[conda](#conda)
-
-[cron](#cron)
-
-[curl](#curl)
-
-[date](#date)
-
-[editing](editing.md):
-	[briss](editing.md#briss)
-	[ffmpeg](editing.md#ffmpeg)
-	[ImageMagick](editing.md#imagemagick)
-	[QPDF](editing.md#qpdf)
-
-[file browsing](file_browsing.md):
-	[Ranger](file_browsing.md#ranger-vim-key-binding-terminal-file-browser)
-
-[file compression](file_compression.md):
-	[7z](file_compression.md#7z),
-	[tar](file_compression.md#tar),
-	[zip](file_compression.md#zip).
-
-[git](git.md):
-	[git](git.md#git),
-	[gitlab](git.md#gitlab).
-	
-[inria](inria.md):
-	[oar](inria.md#oar)
-
-[mount](mount.md):
-	[fstab](mount.md#fstab)
-
-[neuroimaging](neuroimaging.md):
-	[adni](neuroimaging.md#adni) 
-	[ants](neuroimaging.md#ants) 
-	[dicombrowser](neuroimaging.md#dicombrowser) 
-	[DTI Prep](neuroimaging.md#dti-prep)
-	[Explore DTI](neuroimaging.md#explore-dti)
-	[fmri-prep](neuroimaging.md#fmri-prep)
-	[FreeSurfer](neuroimaging.md#freesurfer)
-	[FSL](neuroimaging.md#fsl)
-	[MRICro](neuroimaging.md#mricro)
-	[NeuGrid](neuroimaging.md#neugrid)
-	[SPM](neuroimaging.md#spm)
-
-Scientific Computing:
-- [MATLAB](matlab.md)
-- [R](R.md):
-	[R](R.md#r)
-	[RStudio](R.md#rstudio)
-
-[ssh](ssh.md)
-
-[Virtualization](virtualization.md):
-	[KVM-QEMU](virtualization.md#kvm-qemu):
-
-[Windows](windows.md):
-	[Regedit](windows.md#regedit)
-	[Remote Desktop](windows.md#remotedesktop)
-	[WSL](windows.md#wsl)
-
-### User Management
+## User Management
 
 System user: no password login or home:
 ```bash
@@ -92,7 +78,7 @@ NEWUSER='username'
 sudo useradd -d /home/$NEWUSER -s /bin/bash -m $NEWUSER [--uid 1500] [--comment "User Full Name"] [--expiredate YYYY-MM-DD]
 ```
 
-### Group Management
+## Group Management
 ```bash
 chgrp scratch temp/  # setting the folder /temp as 'scratch'
 chmod g+s temp/  # every file creating under temp will be 'scratch'
@@ -113,7 +99,7 @@ useradd -d /var/vsftp/ASL -s /usr/sbin/nologin -m brescia
 usermod -a -G asl brescia
 ```
 
-### Conda
+## Conda
 ```bash
 conda update -n base conda
 conda info --envs

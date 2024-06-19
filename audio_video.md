@@ -1,6 +1,6 @@
 [mplayer](#mplayer)
 
-### mplayer
+# mplayer
 
 Use "alsa" if there are problems with "pulseaudio".
 `sudo` needed.
