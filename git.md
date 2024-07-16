@@ -131,7 +131,7 @@ git push origin --delete remoteBranchName
 Read carefully:
 - https://git-scm.com/book/en/v2/Git-Tools-Submodules
 - https://medium.com/@porteneuve/mastering-git-submodules-34c65e940407 (https://archive.ph/IrtMt)
-
+	
 Add configuration option for a verbose git output when dealing with submodules
 ```bash
 git config --global status.submoduleSummary true
@@ -209,11 +209,17 @@ git push --delete origin <tag-name>
 
 
 ## LFS: Handling Large Files
-[
+
+DO NOT USE LFS! It is a solution that won’t work to a problem that doesn’t exist.
+
+Instead add your file extension to `.gitattributes`:
+```.gitattributes
+*.bin -diff -delta
+```
+
+
 [source](https://www.git-tower.com/learn/git/ebook/en/command-line/advanced-topics/git-lfs),
 [permalink](http://web.archive.org/web/20231017084743/https://www.git-tower.com/learn/git/ebook/en/command-line/advanced-topics/git-lfs)
-]
-
 ### Hints
 **When to Track**
 
