@@ -263,6 +263,12 @@ Which files are we tracking?
 git lfs ls-files
 ```
 
+In order to properly pull the files managed by LFS you need to:
+
+```bash
+git config --add lfs.url "file:////FileServer/SharedFolder/path_to_LFS.git"
+git lfs pull
+```
 ## Miscellanea
 
 ```bash
