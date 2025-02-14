@@ -32,15 +32,10 @@ git config --global http.postBuffer 524288000 # for big files
 ```
 
 Config file `.gitconfig` on a Windows Based Machine:
-```
-[filter "lfs"]
-        clean = git-lfs clean -- %f
-        smudge = git-lfs smudge -- %f
-        process = git-lfs filter-process
-        required = true
+```.gitconfig
 [user]
-        name = Luigi Antelmi
-        email = luigi.antelmi@gmail.com
+        name = MyName
+        email = MyEmail
 [init]
         defaultBranch = main
 [push]
@@ -50,6 +45,8 @@ Config file `.gitconfig` on a Windows Based Machine:
         whitespace = blank-at-eol, blank-at-eof, space-before-tab
         autocrlf = true
         attributesfile = C:/Users/Luigi.Antelmi/.gitattributes
+        excludesfile =
+        symlinks = true
 [credential]
         helper = cache --timeout=3600
 [http]
@@ -63,7 +60,7 @@ Config file `.gitconfig` on a Windows Based Machine:
         diff = auto
         status = auto
 [diff]
-        tool = p4merge
+        tool = winmerge
 [diff "pandoc"]
         textconv = pandoc --wrap=preserve --to=markdown
 [diff "strings"]
@@ -71,24 +68,77 @@ Config file `.gitconfig` on a Windows Based Machine:
         prompt = false
 [diff "exif"]
         textconv = exiftool
+[diff "sdf"]
+        textconv = sdf2stdout.bat
+        binary = true
+[diff "xl"]
+        command = excel_cmp --diff_format=unified
+        binary = true
+#[diff "exe"]
+#       textconv = assemblyinfo.exe
+#       binary = true
+#[difftool "exe"]
+#       prompt = false
+#       cmd = assemblyinfodiff.sh $LOCAL $REMOTE
 [difftool "p4merge"]
         path = "C:\\Program Files\\Perforce\\p4merge.exe"
+[difftool "winmerge"]
+        path = "C:\\Program Files (x86)\\WinMerge\\WinMergeU.exe"
+[difftool "sdf"]
+        prompt = false
+        cmd = sdfdiff.sh $LOCAL $REMOTE
+[difftool "pandoc"]
+        prompt = false
+        cmd = pandocdiff.sh $LOCAL $REMOTE
 [merge]
         tool = p4merge
 [mergetool "p4merge"]
         path = "C:\\Program Files\\Perforce\\p4merge.exe"
+[mergetool "winmerge"]
+        path = "C:\\Program Files (x86)\\WinMerge\\WinMergeU.exe"
+[difftool "sourcetree"]
+        cmd = "'' "
+[mergetool "sourcetree"]
+        cmd = "'' "
+        trustExitCode = true
 [alias]
+        # see `git help log` for detailed help.
+        #   %h: abbreviated commit hash
+        #   %d: ref names, like the --decorate option of git-log(1)
+        #   %cn: commiter name
+        #   %ce: committer email
+        #   %cr: committer date, relative
+        #   %ci: committer date, ISO 8601-like format
+        #   %an: author name
+        #   %ae: author email
+        #   %ar: author date, relative
+        #   %ai: author date, ISO 8601-like format
+        #   %s: subject
         dc = diff --check
-        history = log --graph --full-history --pretty=format:'%C(red)%h%Creset -%C(bold yellow)%d%C(bold cyan) %s %Creset %C(bold green)(%cr)%Creset - %C(white) %cn %Creset' --abbrev-commit --date=relative
+        history = log --graph --full-history --pretty=format:'%C(red)%h%Creset -%C(bold yellow)%d%C(bold cyan) %s %Creset %C(bold green)[%ch (%cr)]%Creset %C(white)[%cn]%Creset' --abbrev-commit
+        historyverbose = log --graph --full-history --pretty=format:'%C(red)%h%Creset -%C(bold yellow)%d%C(bold cyan) %s %Creset %C(bold green)[A: %ah (%ar) - C: %ch (%cr)]%Creset %C(white)[A: %an - C: %cn]%Creset' --abbrev-commit
         historyheads = log --graph --all --decorate --simplify-by-decoration
         ha = history --all
+        hav = historyverbose --all
         hh = historyheads
         wdiff = diff --word-diff=color --unified=1
+        sdfdiff = difftool -t sdf
+        ss = submodule status
+        su = submodule update
 [status]
         submoduleSummary = true
+[filter "lfs"]
+        smudge = git-lfs smudge --skip -- %f
+        process = git-lfs filter-process --skip
+        required = true
+        clean = git-lfs clean -- %f
+[lfs]
+        contenttype = 0
+[safe]
+        directory = *
 ```
 
-Atribute file `.gitattributes`:
+Attribute file `.gitattributes`:
 ```
 *.png diff=exif
 *.jpg diff=exif
