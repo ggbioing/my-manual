@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "d09d40fa1fc60cb9",
+        "id": "849065c6502fd68d",
         "type": "tabs",
         "children": [
           {
-            "id": "39bb3699e25c94a0",
+            "id": "2b7ed81c58d1161d",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "git.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "git"
+              "title": "New tab"
             }
           }
         ]
@@ -40,7 +36,8 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical"
+                "sortOrder": "alphabetical",
+                "autoReveal": false
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
@@ -52,7 +49,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "file:git",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -73,8 +70,7 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -163,13 +159,17 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "39bb3699e25c94a0",
+  "active": "2b7ed81c58d1161d",
   "lastOpenFiles": [
+    "Finance/The Bull.md",
+    "Finance/Glossario Finanziario.md",
+    "bash.md",
+    "Finance",
+    "git.md",
+    "science/science.md",
     "editing.md",
     "ssh.md",
-    "git.md",
     "windows.md",
-    "science/science.md",
     "science"
   ]
 }
