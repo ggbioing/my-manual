@@ -1,0 +1,1 @@
+t1=`mktemp` && `pandoc --wrap=preserve --to=markdown $1 > $t1` && t2=`mktemp` && `pandoc --wrap=preserve --to=markdown $2 > $t2` && WinMergeU.exe $t1 $t2 && rm -f $t1 $t2

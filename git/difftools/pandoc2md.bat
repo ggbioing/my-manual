@@ -1,0 +1,1 @@
+pandoc --wrap=preserve --to=markdown %1
